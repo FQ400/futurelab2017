@@ -22,12 +22,10 @@ package wasdev.sample;
 public class Visitor {
 	private String _id;
 	private String _rev;
-	private String name = null;
 	private String url = null;
 	private String watsonResult = null;
 
 	public Visitor() {
-		this.name = "";
 		this.url = "";
 		this.watsonResult = "";
 	}
@@ -76,7 +74,7 @@ public class Visitor {
 	 * @return The name of the document.
 	 */
 	public String getName() {
-		return name;
+		return url;
 	}
 	
 	public String getUrl() {
@@ -94,7 +92,7 @@ public class Visitor {
 	 *            The visitorName to set.
 	 */
 	public void setName(String visitorName) {
-		this.name = visitorName;
+		this.url = visitorName;
 	}
 	
 	public void setUrl(String urlString) {
