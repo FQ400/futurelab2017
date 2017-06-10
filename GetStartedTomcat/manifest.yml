@@ -1,0 +1,12 @@
+---
+applications:
+- name: LutzData
+  random-route: true
+  path: target/GetStartedTomcat.war
+  memory: 256M
+  instances: 1
+  buildpack: java_buildpack
+  host: LutzData
+  domain: eu-gb.mybluemix.net
+  services:
+  - Lutz-cloudantNoSQLDB
