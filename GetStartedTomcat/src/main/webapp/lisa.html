@@ -119,16 +119,16 @@ background: red!important;
 
 		var likeHandler = function(event) {
 		    console.log(event.target);
-		    var state = event.target.getAttribute(‘data-state’);
+		    var state = event.target.getAttribute("data-state");
 		    if (state == 0) {
-		        event.target.setAttribute(‘data-state’, 1);
-		        event.target.setAttribute(‘class’,‘lutz-like’);
+		        event.target.setAttribute("data-state", 1);
+		        event.target.setAttribute("class","lutz-like");
 		    } else if (state == 1) {
-		        event.target.setAttribute(‘data-state’, 2);
-		        event.target.setAttribute(‘class’,‘lutz-dislike’);
+		        event.target.setAttribute("data-state", 2);
+		        event.target.setAttribute("class","lutz-dislike");
 		    } else {
-		        event.target.setAttribute(‘data-state’, 0);
-		        event.target.setAttribute(‘class’,‘’);
+		        event.target.setAttribute("data-state", 0);
+		        event.target.setAttribute("class","");
 		    }
 		};
 		
