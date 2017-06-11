@@ -22,7 +22,7 @@ public class WatsonConnector {
 	}
 
 	public AnalysisResults recognizeNaturalLanguage() {
-		EntitiesOptions entities = new EntitiesOptions.Builder().sentiment(true).emotion(true).limit(10).build();
+		EntitiesOptions entities = new EntitiesOptions.Builder().sentiment(true).emotion(true).limit(20).build();
 		CategoriesOptions categories = new CategoriesOptions();
 		Features features = new Features.Builder().entities(entities).categories(categories).build();
 		AnalyzeOptions parameters = new AnalyzeOptions.Builder().url(url).features(features).build();
