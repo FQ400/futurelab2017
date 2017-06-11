@@ -9,17 +9,41 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
+<style type="text/css"> 
+.lutz-like{
+background: green!important;
+}
+.lutz-dislike{
+background: red!important;
+}
+</style>
 </head>
 <body>
 	<div id="pageContainer" class="container">
+		<nav class="navbar navbar-default" style= "margin-top:20px">
+			<div class="container-fluid">
+				<div class="navbar-header" style= "text-align: center">
+					<label class="checkbox-inline"><input type="checkbox"
+						value="" checked="checked">Share with SZ</label> <label class="checkbox-inline"><input
+						type="checkbox" value="">Share with Alexa</label> 
+				</div>
+			</div>
+		</nav>
+
 		<p>
 			<img id="image"
 				src="https://files.slack.com/files-pri/T5R3ABTMW-F5R4FD1UY/lutz-colored.png"
 				alt="" />
 		</p>
-		<p class="lead">TAG CLOUD: LISA</p>
-		<div id="tagContainer"> </div>
-		<button type="button" class="btn btn-warning btn-lg" style=" margintop:20px;" onclick="location.href = 'http://lutzdata.eu-gb.mybluemix.net';">VIEW READ ARTICLE</button>
+		<p class="lead">LISAS TAG CLOUD</p>
+		<div style="margin-top: 30px; margin-bottom: 30px;">
+			<button type="button" class="btn btn-warning btn-lg"
+				onclick="location.href = 'http://lutzdata.eu-gb.mybluemix.net';">VIEW
+				READ ARTICLE</button>
+		</div>
+		<div id="tagContainer"></div>
+
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script
 			src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -58,7 +82,7 @@
 		       else if (el.counter >= 5){
 		           tagSize ="28px";
 		       }
-		       htmlArray.push("<span style='color: white;background:lightgrey; padding:10px; margin:5px; border-radius: 10px; display: inline-block; font-size: " + tagSize +";'>")
+		       htmlArray.push("<span class='lutz-tag' style='color: white;background:lightgrey; padding:10px; margin:5px; border-radius: 10px; display: inline-block; font-size: " + tagSize +";'>")
 		       htmlArray.push(el.text);
 		       htmlArray.push("</span>");
 		       }
@@ -72,6 +96,10 @@
 
 		function placeTags(strArray) {
 		    document.querySelector("#tagContainer").innerHTML = strArray.join("");
+		    var tagEls = Array.prototype.slice.call(document.querySelectorAll(".lutz-tag"));
+	        tagEls.forEach(function(el) {
+	             el.onclick = likeHandler;
+	         });
 		}
 
 
@@ -89,6 +117,22 @@
 		    console.log('ERR', err);
 		})
 
+		var likeHandler = function(event) {
+		    console.log(event.target);
+		    var state = event.target.getAttribute(‘data-state’);
+		    if (state == 0) {
+		        event.target.setAttribute(‘data-state’, 1);
+		        event.target.setAttribute(‘class’,‘lutz-like’);
+		    } else if (state == 1) {
+		        event.target.setAttribute(‘data-state’, 2);
+		        event.target.setAttribute(‘class’,‘lutz-dislike’);
+		    } else {
+		        event.target.setAttribute(‘data-state’, 0);
+		        event.target.setAttribute(‘class’,‘’);
+		    }
+		};
+		
+		
 		</script>
 </body>
 </html>

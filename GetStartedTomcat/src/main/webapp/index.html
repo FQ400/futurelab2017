@@ -16,22 +16,28 @@
 
 <body>
 	<div class="container">
+	
+		
+	
 		<p>
 			<img id="image"
 				src="https://files.slack.com/files-pri/T5R3ABTMW-F5R4FD1UY/lutz-colored.png"
 				alt="" />
 		</p>
 		<div id="nameInput" class="input-group-lg center-block helloInput">
-			<p class="lead">Type in your SZ article</p>
+			<div style=" margin-top:30px; margin-bottom:30px;">
+			<button type="button" class="btn btn-warning btn-lg"  onclick="location.href = 'http://lutzdata.eu-gb.mybluemix.net/lisa.html';">OPEN TAG CLOUD</button>
+			</div>
 
 			<div class="input-group input-group-lg">
 				<input id="user_name" type="text" class="form-control"
-					placeholder="Link" aria-describedby="sizing-addon1"> 
+					placeholder="Type in your SZ article link" aria-describedby="sizing-addon1"> 
 					<span class="input-group-addon" id="goButton">GO!</span>
 			</div>
 			<p id="response" class="lead text-center"></p>
 			<p id="databaseNames" class="lead text-center"></p>
-			<button type="button" class="btn btn-warning btn-lg" style=" margintop:20px;" onclick="location.href = 'http://lutzdata.eu-gb.mybluemix.net';">VIEW READ ARTICLE</button>
+			
+			
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script
