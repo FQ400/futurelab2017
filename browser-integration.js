@@ -1,3 +1,4 @@
+(function(){
 var lutzReaderUrl = 'https://lutz-data-reader.eu-gb.mybluemix.net/url?url=' + location.href;
 
 var lutzStyle = document.createElement('style');
@@ -69,4 +70,6 @@ getTags.then(function(resp) {
 })
 .catch(function(err) {
     console.log('ERR', err);
-})
+});
+
+})();
